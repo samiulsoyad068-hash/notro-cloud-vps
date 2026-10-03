@@ -39,7 +39,7 @@ docker --version
 ### 2. Clone the repository
 
 ```bash
-git clone https://github.com/nxtinfinite481-png/vps-deploy-bot.git
+git clone https://github.com/samiulsoyad068-hash/notro-cloud-vps.git
 cd vps-deploy-bot
 ```
 
