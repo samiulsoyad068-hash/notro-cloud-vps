@@ -1,0 +1,14 @@
+# Dependencies
+venv/
+__pycache__/
+*.pyc
+
+# Runtime data
+.env
+bot.db
+bot.db-*
+bot.log
+
+# OS
+Thumbs.db
+.DS_Store
