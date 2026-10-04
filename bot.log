@@ -1,0 +1,9 @@
+2026-10-03 22:32:45,531 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-10-03 22:32:45,565 - WARNING - davey is not installed, voice will NOT be supported
+2026-10-03 22:32:45,570 - WARNING - Docker daemon not reachable on startup (Error while fetching server API version: (2, 'CreateFile', 'The system cannot find the file specified.')); VPS commands will report errors until Docker is available.
+2026-10-04 11:07:57,578 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-10-04 11:07:57,578 - WARNING - davey is not installed, voice will NOT be supported
+2026-10-04 11:07:57,583 - WARNING - Docker daemon not reachable on startup (Error while fetching server API version: (2, 'CreateFile', 'The system cannot find the file specified.')); VPS commands will report errors until Docker is available.
+2026-10-04 11:19:18,985 - WARNING - PyNaCl is not installed, voice will NOT be supported
+2026-10-04 11:19:18,985 - WARNING - davey is not installed, voice will NOT be supported
+2026-10-04 11:19:18,989 - WARNING - Docker daemon not reachable on startup (Error while fetching server API version: (2, 'CreateFile', 'The system cannot find the file specified.')); VPS commands will report errors until Docker is available.
