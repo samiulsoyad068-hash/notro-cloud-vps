@@ -891,7 +891,13 @@ async def create_vps(interaction: discord.Interaction, os_type, ram=DEFAULT_RAM,
         return
 
     await asyncio.sleep(5)
-    ssh_line = await async_setup_sshx(container_id)
+    ssh_line = None
+    try:
+        ssh_line = await async_setup_sshx(container_id)
+    except Exception as e:
+        logger.exception(f"SSHX setup threw for {container_id}: {e}")
+        LAST_DOCKER_ERROR = f"sshx setup error: {e}"
+        ssh_line = None
 
     if ssh_line:
         add_vps(target_user.id, container_id, container_name, os_type, hostname, ssh_line, ram, cpu, disk, expires_at=expires_at_str, name=name, location=region)
@@ -1046,12 +1052,15 @@ async def resync(interaction: discord.Interaction):
 @bot.tree.error
 async def on_app_command_error(interaction: discord.Interaction, error):
     logger.exception(f"Command error: {error}")
+    msg = f"⚠️ Unexpected error: `{type(error).__name__}: {error}`\nCheck `bot.log` for the full traceback."
     if not interaction.response.is_done():
         try:
-            await interaction.response.send_message(
-                embed=discord.Embed(description="⚠️ An unexpected error occurred.", color=discord.Color.red()), ephemeral=True)
+            await interaction.response.send_message(msg, ephemeral=True)
         except Exception:
-            pass
+            try:
+                await interaction.followup.send(msg, ephemeral=True)
+            except Exception:
+                pass
 
 
 # ----------------- SLASH COMMANDS (USERS) ----------------- #
